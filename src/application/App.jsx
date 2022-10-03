@@ -1,30 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import { Wrapper } from './StyeledComponents';
-import ContactsBook from './contactsBook/ContactsBook';
+import React from 'react';
+import {
+  Wrapper,
+} from './StyledComponents';
+import Searchbar from './components/searchbar/Searchbar';
+import ImageGalleryItem from './components/imageGalleryItem/ImageGalleryItem';
+import Modal from './components/modal/Modal';
+import Button from './components/button/Button';
+
 
 const App = () => {
-  const [contacts, setContacts] = useState([]);
-  const [filter, setFilter] = useState('');
-
-  useEffect(() => {
-    const isStored = localStorage.getItem('contacts')
-    if (isStored) {
-      setContacts(JSON.parse(isStored))
-    }
-  }, [])
-
-  useEffect(() => {
-    localStorage.setItem('contacts', JSON.stringify(contacts));
-  }, [contacts])
-
   return (
     <Wrapper>
-      <ContactsBook
-        filter={filter}
-        contacts={contacts}
-        setFilter={setFilter}
-        setContacts={setContacts}
-      />
+      <Searchbar/>
+      <ImageGalleryItem/>
+      <Modal/>
+      <Button/>
+      ДЩД
     </Wrapper>
   );
 };
