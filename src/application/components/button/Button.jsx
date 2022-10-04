@@ -1,14 +1,30 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
-  Wrapper,
+  ButtonWrapper,
 } from './StyledComponents';
 
-const Button = () => {
+const Button = props => {
+  const {
+    onSubmit,
+    setCurrentPage,
+  } = props;
+
+  const handleOnClick = () => {
+    setCurrentPage(prevState => prevState + 1)
+    onSubmit()
+  }
+
   return (
-    <Wrapper>
+    <ButtonWrapper onClick={handleOnClick}>
       Button
-    </Wrapper>
+    </ButtonWrapper>
   )
 }
+
+Button.propTypes = {
+  onSubmit: PropTypes.func,
+  setCurrentPage: PropTypes.func
+};
 
 export default Button;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Overlay = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -13,7 +13,12 @@ export const Wrapper = styled.div`
   z-index: 1200;
 `;
 
-// .Modal {
-//   max-width: calc(100vw - 48px);
-//   max-height: calc(100vh - 24px);
-// }
+export const WrapperModal = styled.div`
+  max-width: calc(100vw - 48px);
+  max-height: calc(100vh - 24px);
+`;
+
+export const Image = styled.img`
+  width: 100%;
+  height: 100%;
+`;
